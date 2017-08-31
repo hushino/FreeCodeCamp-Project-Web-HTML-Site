@@ -1,8 +1,17 @@
 'use strict';
-var http = require('http');
-var port = process.env.PORT || 1337;
+const path = require('path');
+const express = require('express');
+const app = express();
+const ejs = require('ejs');
+const log = console.log;
 
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.get('/', function (req, res) {
+    res.render("index.ejs");
+});
+
+const port = app.get('port') || 9000;
+app.listen(port, () => log(('Server is listening music on port:'),(`${port} ??`)));
+
