@@ -1,0 +1,9 @@
+{
+  "name": "free-code-camp-project-web1",
+  "version": "0.0.0",
+  "description": "FreeCodeCampProjectWeb1",
+  "main": "server.js",
+  "author": {
+    "name": "frost"
+  }
+}
